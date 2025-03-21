@@ -1,0 +1,23 @@
+---
+
+const response = await fetch("https://pokeapi.co/api/v2/pokemon")
+const json = await response.json()
+const pokemons = json.results
+
+
+
+interface Pokemon{
+    name: string,
+    url: string
+}
+
+---
+
+
+
+<div>
+    Hola
+    {pokemons.map((pok:Pokemon)=>
+        <p>{pok.name}</p>
+    )}
+</div>
